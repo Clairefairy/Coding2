@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Carrossel Olá Mundo</title>
+</head>
+<body>
+    <div class="carousel">
+        <div class="carousel-item active">Olá Mundo!</div>
+        <div class="carousel-item">Bem-vindo ao Carrossel!</div>
+        <div class="carousel-item">Divirta-se com o código!</div>
+    </div>
+
+    <script>
+        let currentIndex = 0;
+        const items = document.querySelectorAll('.carousel-item');
+
+        function showNextItem() {
+            items[currentIndex].classList.remove('active');
+            currentIndex = (currentIndex + 1) % items.length;
+            items[currentIndex].classList.add('active');
+        }
+
+        setInterval(showNextItem, 3000); // Muda a cada 3 segundos
+    </script>
+</body>
+</html>
